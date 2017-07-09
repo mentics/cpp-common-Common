@@ -7,7 +7,7 @@
 
 namespace mentics { namespace common {
 
-#define LOG(lvl) BOOST_LOG_SEV(lg, lvl) << logName << ": "
+#define LOG(lvl) BOOST_LOG_SEV(lg, lvl) << name << ": "
 
 uint64_t currentTimeMillis();
 
@@ -34,9 +34,9 @@ inline std::string toString(const T& object) {
 
 class CanLog {
 protected:
-	std::string logName;
+	std::string name;
 public:
-	CanLog(std::string logName) : logName(logName) {}
+	CanLog(std::string logName) : name(logName) {}
 	boost::log::sources::severity_logger_mt<boost::log::trivial::severity_level> lg;
 };
 
