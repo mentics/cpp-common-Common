@@ -5,6 +5,8 @@
 #include <boost/log/sources/severity_logger.hpp>
 #include <boost/log/trivial.hpp>
 
+typedef uint8_t byte;
+
 namespace mentics { namespace common {
 
 #define LOG(lvl) BOOST_LOG_SEV(lg, lvl) << name << ": "

@@ -127,9 +127,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Text Include="ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="include\MenticsCommon.h" />
     <ClInclude Include="include\MenticsCommonTest.h" />
     <ClInclude Include="include\stdafx.h" />
@@ -137,6 +134,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\MenticsCommon.cpp" />
+    <ClCompile Include="src\MenticsCommonTest.cpp" />
     <ClCompile Include="src\stdafx.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
