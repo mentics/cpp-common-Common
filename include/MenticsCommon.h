@@ -11,6 +11,8 @@ namespace mentics { namespace common {
 
 #define LOG(lvl) BOOST_LOG_SEV(lg, lvl) << name << ": "
 
+const std::string EMPTY_STRING;
+
 uint64_t currentTimeMillis();
 
 // https://stackoverflow.com/questions/39912/how-do-i-remove-an-item-from-a-stl-vector-with-a-certain-value
