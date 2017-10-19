@@ -7,9 +7,9 @@
 
 typedef uint8_t byte;
 
-namespace mentics { namespace common {
-
 #define LOG(lvl) BOOST_LOG_SEV(lg, lvl) << name << ": "
+
+namespace mentics { namespace common {
 
 const std::string EMPTY_STRING;
 
@@ -45,3 +45,6 @@ public:
 };
 
 }}
+
+namespace lvl = boost::log::trivial;
+namespace cmn = mentics::common;
