@@ -14,6 +14,7 @@ namespace mentics { namespace common {
 const std::string EMPTY_STRING;
 
 uint64_t currentTimeMillis();
+uint64_t currentTimeNanos();
 
 // https://stackoverflow.com/questions/39912/how-do-i-remove-an-item-from-a-stl-vector-with-a-certain-value
 template <typename T>

@@ -12,3 +12,6 @@
 
 
 // TODO: reference additional headers your program requires here
+
+#include <boost/log/sources/severity_logger.hpp>
+#include <boost/log/trivial.hpp>
