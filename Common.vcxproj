@@ -128,6 +128,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="include\Agent.h" />
     <ClInclude Include="include\MenticsCommon.h" />
     <ClInclude Include="include\MenticsCommonTest.h" />
     <ClInclude Include="include\stdafx.h" />
