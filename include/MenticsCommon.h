@@ -4,6 +4,7 @@
 #include <vector>
 #include <boost/log/sources/severity_logger.hpp>
 #include <boost/log/trivial.hpp>
+#include "nn.hpp"
 
 typedef uint8_t byte;
 
@@ -49,3 +50,4 @@ public:
 
 namespace lvl = boost::log::trivial;
 namespace cmn = mentics::common;
+namespace nn = dropbox::oxygen;

@@ -16,6 +16,8 @@
 #include <stdio.h>
 #include <tchar.h>
 
+#include <gsl/gsl>
+
 #include <boost/log/sources/severity_logger.hpp>
 #include <boost/log/trivial.hpp>
 #include <boost/lockfree/queue.hpp>
@@ -29,3 +31,5 @@
 #include "CppUnitTest.h"
 
 #include "nlopt/nlopt.hpp"
+
+#include "nn.hpp"

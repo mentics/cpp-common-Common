@@ -131,6 +131,7 @@
     <ClInclude Include="include\Agent.h" />
     <ClInclude Include="include\MenticsCommon.h" />
     <ClInclude Include="include\MenticsCommonTest.h" />
+    <ClInclude Include="include\nn.hpp" />
     <ClInclude Include="include\stdafx.h" />
     <ClInclude Include="include\targetver.h" />
   </ItemGroup>
