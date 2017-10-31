@@ -6,9 +6,27 @@
 #include <boost/log/trivial.hpp>
 #include "nn.hpp"
 
-typedef uint8_t byte;
+#define FOREVER 1E+31
 
 #define LOG(lvl) BOOST_LOG_SEV(lg, lvl) << name << ": "
+
+#define PTRS(TypeName)\
+using TypeName##Ptr = nn::nn<TypeName*>;\
+using TypeName##UniquePtr = nn::nn<std::unique_ptr<TypeName> >;
+
+#define PTRS1(TypeName, TemplateName)\
+template <typename TemplateName>\
+using TypeName##Ptr = nn::nn<TypeName<TemplateName>*>;\
+template <typename TemplateName>\
+using TypeName##UniquePtr = nn::nn<std::unique_ptr<TypeName<TemplateName>>>;
+
+#define PTRS2(TypeName, TemplateName1, TemplateName2)\
+template <typename TemplateName1, typename TemplateName2>\
+using TypeName##Ptr = nn::nn<TypeName<TemplateName1, TemplateName2>*>;\
+template <typename TemplateName1, typename TemplateName2>\
+using TypeName##UniquePtr = nn::nn<std::unique_ptr<TypeName<TemplateName1, TemplateName2>>>;
+
+typedef uint8_t byte;
 
 namespace nn = dropbox::oxygen;
 
@@ -16,6 +34,12 @@ template <typename T, typename... Args>
 nn::nn_unique_ptr<T> uniquePtr(Args &&... args) {
 	return nn::nn_unique_ptr<T>(nn::i_promise_i_checked_for_null,
 		std::unique_ptr<T>(new T(std::forward<Args>(args)...)));
+}
+
+template <typename T, typename TC, typename... Args>
+nn::nn_unique_ptr<T> uniquePtrC(Args &&... args) {
+	return nn::nn_unique_ptr<T>(nn::i_promise_i_checked_for_null,
+		std::unique_ptr<T>(new TC(std::forward<Args>(args)...)));
 }
 
 //template <typename T, typename... Args>
