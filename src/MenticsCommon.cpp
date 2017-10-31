@@ -2,7 +2,7 @@
 
 #include <chrono>
 
-namespace mentics { namespace common {
+namespace MenticsGame {
 
 namespace chrono = std::chrono;
 
@@ -14,4 +14,4 @@ uint64_t currentTimeNanos() {
 	return chrono::duration_cast<chrono::nanoseconds>(chrono::high_resolution_clock::now().time_since_epoch()).count();
 }
 
-}}
+}

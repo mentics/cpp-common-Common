@@ -47,7 +47,7 @@ nn::nn_unique_ptr<T> uniquePtrC(Args &&... args) {
 //	return std::make_unique<T>(std::forward<Args>(args)...);
 //}
 
-namespace mentics { namespace common {
+namespace MenticsGame {
 
 const std::string EMPTY_STRING;
 
@@ -83,7 +83,7 @@ public:
 	boost::log::sources::severity_logger_mt<boost::log::trivial::severity_level> lg;
 };
 
-}}
+}
 
 namespace lvl = boost::log::trivial;
-namespace cmn = mentics::common;
+using namespace MenticsGame;

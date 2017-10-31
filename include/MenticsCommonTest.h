@@ -1,7 +1,7 @@
 #pragma once
 
-namespace mentics { namespace test {
+namespace MenticsGame {
 
 void setupLog();
 
-}}
+}

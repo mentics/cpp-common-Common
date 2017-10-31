@@ -9,7 +9,7 @@
 //#include <boost/log/sources/severity_logger.hpp>
 #include <boost/log/sources/record_ostream.hpp>
 
-namespace mentics { namespace test {
+namespace MenticsGame {
 
 void setupLog() {
 	auto sink = boost::log::add_file_log("unit-test.log");
@@ -20,4 +20,4 @@ void setupLog() {
 	boost::log::add_common_attributes();
 }
 
-}}
+}
