@@ -10,6 +10,19 @@ typedef uint8_t byte;
 
 #define LOG(lvl) BOOST_LOG_SEV(lg, lvl) << name << ": "
 
+namespace nn = dropbox::oxygen;
+
+template <typename T, typename... Args>
+nn::nn_unique_ptr<T> uniquePtr(Args &&... args) {
+	return nn::nn_unique_ptr<T>(nn::i_promise_i_checked_for_null,
+		std::unique_ptr<T>(new T(std::forward<Args>(args)...)));
+}
+
+//template <typename T, typename... Args>
+//std::unique_ptr<T> uniquePtr(Args &&... args) {
+//	return std::make_unique<T>(std::forward<Args>(args)...);
+//}
+
 namespace mentics { namespace common {
 
 const std::string EMPTY_STRING;
@@ -50,4 +63,3 @@ public:
 
 namespace lvl = boost::log::trivial;
 namespace cmn = mentics::common;
-namespace nn = dropbox::oxygen;
