@@ -72,14 +72,20 @@
     <Import Project="..\worldsim-global.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>C:\Users\Antuan\Desktop\PR\QuipTrials\lib\GSL\include;C:\Users\Antuan\Desktop\PR\QuipTrials\lib\spdlog\include;C:\Users\Antuan\Desktop\PR\QuipTrials\lib\oBB;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>C:\Users\Antuan\Desktop\PR\QuipTrials\lib\GSL\include;C:\Users\Antuan\Desktop\PR\QuipTrials\lib\spdlog\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>Create</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>C:\Users\Antuan\Desktop\PR\QuipTrials\lib\GSL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -127,7 +133,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="include\Agent.h" />
     <ClInclude Include="include\concurrentqueue.h" />
     <ClInclude Include="include\MenticsCommon.h" />
     <ClInclude Include="include\MenticsCommonTest.h" />

@@ -2,13 +2,22 @@
 
 #include <string>
 #include <vector>
+#include "stdafx.h"
+/*
 #include <boost/log/sources/severity_logger.hpp>
 #include <boost/log/trivial.hpp>
+*/
+
 #include "nn.hpp"
+#include <spdlog/spdlog.h>
+
+#include "CppUnitTest.h"
+using namespace Microsoft::VisualStudio::CppUnitTestFramework;
+
 
 #define FOREVER 1E+31
 
-#define LOG(lvl) BOOST_LOG_SEV(lg, lvl) << name << ": "
+
 
 #define PTRS(TypeName)\
 using TypeName##Ptr = nn::nn<TypeName*>;\
@@ -80,10 +89,33 @@ protected:
 	std::string name;
 public:
 	CanLog(std::string logName) : name(logName) {}
-	boost::log::sources::severity_logger_mt<boost::log::trivial::severity_level> lg;
+	//boost::log::sources::severity_logger_mt<boost::log::trivial::severity_level> lg;
+};
+
+
+
+class unit_test_sink : public spdlog::sinks::sink
+{
+public:
+
+	void log(const spdlog::details::log_msg& msg) override
+	{
+		Logger::WriteMessage(msg.formatted.c_str());
+	}
+
+	void log(char* msg)
+	{                                                            
+		Logger::WriteMessage(msg);
+	}
+
+	void flush()
+	{
+		// to impl
+	}
+
 };
 
 }
 
-namespace lvl = boost::log::trivial;
+
 using namespace MenticsGame;

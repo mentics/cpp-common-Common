@@ -18,9 +18,13 @@
 
 #include <gsl/gsl>
 
+
+
+/*
 #include <boost/log/sources/severity_logger.hpp>
 #include <boost/log/trivial.hpp>
 #include <boost/lockfree/queue.hpp>
+*/
 
 #include <vector>
 #include <queue>
@@ -30,6 +34,11 @@
 
 #include "CppUnitTest.h"
 
-#include "nlopt/nlopt.hpp"
+#include "../../math/include/nlopt/nlopt.hpp"
 
 #include "nn.hpp"
+
+#include <spdlog/logger.h>
+#include <spdlog/spdlog.h>
+
+
