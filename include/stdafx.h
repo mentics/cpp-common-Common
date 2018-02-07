@@ -41,4 +41,8 @@
 #include <spdlog/logger.h>
 #include <spdlog/spdlog.h>
 
+#include "spdlog/fmt/bundled/ostream.h"
+
+#include <iostream>
+
 

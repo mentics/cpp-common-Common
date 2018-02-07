@@ -89,7 +89,8 @@ protected:
 	std::string name;
 public:
 	CanLog(std::string logName) : name(logName) {}
-	//boost::log::sources::severity_logger_mt<boost::log::trivial::severity_level> lg;
+	std::shared_ptr<spdlog::logger> m_log = spdlog::stdout_logger_mt("unique name");
+	
 };
 
 
