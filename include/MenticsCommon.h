@@ -3,12 +3,13 @@
 #include <string>
 #include <vector>
 #include "stdafx.h"
-
 #include "nn.hpp"
+
 #include <spdlog/spdlog.h>
 
 #include "CppUnitTest.h"
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
+
 
 
 #define FOREVER 1E+31
