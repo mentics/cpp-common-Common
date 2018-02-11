@@ -22,19 +22,6 @@ uint64_t currentTimeNanos() {
 }
 
 
-template <typename T, typename... Args>
-nn::nn_unique_ptr<T> uniquePtr(Args &&... args) {
-	return nn::nn_unique_ptr<T>(nn::i_promise_i_checked_for_null,
-		std::unique_ptr<T>(new T(std::forward<Args>(args)...)));
-}
-
-template <typename T, typename TC, typename... Args>
-nn::nn_unique_ptr<T> uniquePtrC(Args &&... args) {
-	return nn::nn_unique_ptr<T>(nn::i_promise_i_checked_for_null,
-		std::unique_ptr<T>(new TC(std::forward<Args>(args)...)));
-}
-
-
 
 template <typename T>
 inline void removeBySwap(std::vector<T>& v, T& value) {
@@ -56,4 +43,18 @@ inline std::string toString(const T& object) {
 	return ss.str();
 }
 
+void test_sink::log(const spdlog::details::log_msg& msg) 
+{
+	Logger::WriteMessage(msg.formatted.c_str());
+}
+
+void test_sink::log(char* msg)
+{
+	Logger::WriteMessage(msg);
+}
+
+void test_sink::flush()
+{
+	// to impl
+}
 }

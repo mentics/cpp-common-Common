@@ -45,48 +45,45 @@ namespace MenticsGame {
 
 const std::string EMPTY_STRING;
 
+const std::shared_ptr<spdlog::logger> m_log = spdlog::get("logger");
+
 uint64_t currentTimeMillis();
 uint64_t currentTimeNanos();
 
 // https://stackoverflow.com/questions/39912/how-do-i-remove-an-item-from-a-stl-vector-with-a-certain-value
 
+
 template <typename T, typename... Args>
-nn::nn_unique_ptr<T> uniquePtr(Args &&... args);
+nn::nn_unique_ptr<T> uniquePtr(Args &&... args) {
+	return nn::nn_unique_ptr<T>(nn::i_promise_i_checked_for_null,
+		std::unique_ptr<T>(new T(std::forward<Args>(args)...)));
+}
+
 template <typename T, typename TC, typename... Args>
-nn::nn_unique_ptr<T> uniquePtrC(Args &&... args);
+nn::nn_unique_ptr<T> uniquePtrC(Args &&... args) {
+	return nn::nn_unique_ptr<T>(nn::i_promise_i_checked_for_null,
+		std::unique_ptr<T>(new TC(std::forward<Args>(args)...)));
+}
+
 
 class CanLog {
 protected:
 	std::string name;
 public:
 	CanLog(std::string logName) : name(logName) {}
-	std::shared_ptr<spdlog::logger> m_log = spdlog::stdout_logger_mt("unique name");
 	
 };
 
+  
 
-// Not yet used --------------
-/*   
-class unit_test_sink : public spdlog::sinks::sink
+class test_sink : public spdlog::sinks::sink
 {
 public:
+	void log(const spdlog::details::log_msg& msg) override;
+	void log(char* msg);
+	void flush();
 
-	void log(const spdlog::details::log_msg& msg) override
-	{
-		Logger::WriteMessage(msg.formatted.c_str());
-	}
-
-	void log(char* msg)
-	{                                                            
-		Logger::WriteMessage(msg);
-	}
-
-	void flush()
-	{
-		// to impl
-	}
-
-};*/
+};
 
 }
 
