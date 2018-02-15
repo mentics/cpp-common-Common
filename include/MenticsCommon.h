@@ -1,12 +1,7 @@
 #pragma once
 
 
-#include "stdafx.h"
-#include "nn.hpp"
 
-#include <spdlog/spdlog.h>
-
-#include "CppUnitTest.h"
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 
@@ -43,49 +38,26 @@ namespace nn = dropbox::oxygen;
 
 namespace MenticsGame {
 
-const std::string EMPTY_STRING;
+	const std::string EMPTY_STRING;
 
-const std::shared_ptr<spdlog::logger> m_log = spdlog::get("logger");
+	const std::shared_ptr<spdlog::logger> m_log = spdlog::get("logger");
 
-uint64_t currentTimeMillis();
-uint64_t currentTimeNanos();
+	uint64_t currentTimeMillis();
+	uint64_t currentTimeNanos();
 
-// https://stackoverflow.com/questions/39912/how-do-i-remove-an-item-from-a-stl-vector-with-a-certain-value
-
-
-template <typename T, typename... Args>
-nn::nn_unique_ptr<T> uniquePtr(Args &&... args) {
-	return nn::nn_unique_ptr<T>(nn::i_promise_i_checked_for_null,
-		std::unique_ptr<T>(new T(std::forward<Args>(args)...)));
-}
-
-template <typename T, typename TC, typename... Args>
-nn::nn_unique_ptr<T> uniquePtrC(Args &&... args) {
-	return nn::nn_unique_ptr<T>(nn::i_promise_i_checked_for_null,
-		std::unique_ptr<T>(new TC(std::forward<Args>(args)...)));
-}
+	// https://stackoverflow.com/questions/39912/how-do-i-remove-an-item-from-a-stl-vector-with-a-certain-value
 
 
-class CanLog {
-protected:
-	std::string name;
-public:
-	CanLog(std::string logName) : name(logName) {}
-	
-};
+	template <typename T, typename... Args>
+	nn::nn_unique_ptr<T> uniquePtr(Args &&... args) {
+		return nn::nn_unique_ptr<T>(nn::i_promise_i_checked_for_null,
+			std::unique_ptr<T>(new T(std::forward<Args>(args)...)));
+	}
 
-  
-
-class test_sink : public spdlog::sinks::sink
-{
-public:
-	void log(const spdlog::details::log_msg& msg) override;
-	void log(char* msg);
-	void flush();
-
-};
+	template <typename T, typename TC, typename... Args>
+	nn::nn_unique_ptr<T> uniquePtrC(Args &&... args) {
+		return nn::nn_unique_ptr<T>(nn::i_promise_i_checked_for_null,
+			std::unique_ptr<T>(new TC(std::forward<Args>(args)...)));
+	}
 
 }
-
-
-using namespace MenticsGame;

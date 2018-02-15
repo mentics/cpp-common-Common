@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include "MenticsCommon.h"
+#include "MenticsCommonTest.h"
 
 namespace MenticsGame {
 
@@ -13,4 +14,19 @@ namespace MenticsGame {
 		spdlog::register_logger(log);
 	}
 	
+
+	void test_sink::log(const spdlog::details::log_msg& msg)
+	{
+		Logger::WriteMessage(msg.formatted.c_str());
+	}
+
+	void test_sink::log(char* msg)
+	{
+		Logger::WriteMessage(msg);
+	}
+
+	void test_sink::flush()
+	{
+		// to impl
+	}
 }
