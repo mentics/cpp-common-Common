@@ -1,5 +1,7 @@
 #include "stdafx.h"
 
+#include <string>
+#include <vector>
 #include "MenticsCommon.h"
 
 namespace MenticsGame {
