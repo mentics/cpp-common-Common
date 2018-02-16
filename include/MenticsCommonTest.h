@@ -1,5 +1,11 @@
 #pragma once
 
+
+
+using namespace Microsoft::VisualStudio::CppUnitTestFramework;
+
+
+
 namespace MenticsGame {
 
 void setupLog();

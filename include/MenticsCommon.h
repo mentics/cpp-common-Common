@@ -2,10 +2,6 @@
 
 
 
-using namespace Microsoft::VisualStudio::CppUnitTestFramework;
-
-
-
 #define FOREVER 1E+31
 
 
