@@ -11,15 +11,6 @@ namespace MenticsGame {
 void setupLog();
 
 
-class CanLog {
-protected:
-	std::string name;
-public:
-	CanLog(std::string logName) : name(logName) {}
-
-};
-
-
 
 class test_sink : public spdlog::sinks::sink
 {

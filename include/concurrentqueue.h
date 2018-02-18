@@ -266,7 +266,8 @@ namespace moodycamel {
 		} max_align_t;
 	}
 
-	// Default traits for the ConcurrentQueue. To change some of the
+	// Default traits for the ConcurrentQueue. To 
+	//some of the
 	// traits without re-implementing all of them, inherit from this
 	// struct and shadow the declarations you wish to be different;
 	// since the traits are used as a template type parameter, the
