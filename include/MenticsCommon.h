@@ -35,8 +35,6 @@ namespace nn = dropbox::oxygen;
 namespace MenticsGame {
 
 	const std::string EMPTY_STRING;
-
-	const std::shared_ptr<spdlog::logger> log = spdlog::get("logger");
 	uint64_t currentTimeMillis();
 	uint64_t currentTimeNanos();
 
