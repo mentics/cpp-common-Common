@@ -10,8 +10,7 @@ namespace MenticsGame {
 
 void setupLog();
 
-
-const std::shared_ptr<spdlog::logger> log = spdlog::get("logger");
+extern std::shared_ptr<spdlog::logger> log;
 
 class test_sink : public spdlog::sinks::sink
 {

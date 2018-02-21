@@ -1,5 +1,5 @@
 #pragma once
-
+#include "nn.hpp"
 
 
 #define FOREVER 1E+31

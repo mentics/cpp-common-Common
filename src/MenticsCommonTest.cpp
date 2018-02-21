@@ -6,11 +6,11 @@
 #include "MenticsCommonTest.h"
 
 namespace MenticsGame {
+	std::shared_ptr<spdlog::logger> log = spdlog::get("logger");
+	spdlog::sink_ptr sink = std::make_shared<test_sink>();
 
-	
 	void setupLog() {
-		test_sink sink;
-		const auto log = std::make_shared<spdlog::logger>("logger", spdlog::sink_ptr(&sink));
+		log = std::make_shared<spdlog::logger>("logger", sink);
 		spdlog::register_logger(log);
 		log->error("WORKS");
 	}
