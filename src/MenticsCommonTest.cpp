@@ -5,6 +5,8 @@
 #include "MenticsCommon.h"
 #include "MenticsCommonTest.h"
 
+using namespace Microsoft::VisualStudio::CppUnitTestFramework;
+
 namespace MenticsGame {
 	std::shared_ptr<spdlog::logger> log = spdlog::get("logger");
 	spdlog::sink_ptr sink = std::make_shared<test_sink>();
