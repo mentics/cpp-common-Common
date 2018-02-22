@@ -12,7 +12,6 @@ namespace MenticsGame {
 	void setupLog() {
 		log = std::make_shared<spdlog::logger>("logger", sink);
 		spdlog::register_logger(log);
-		log->error("WORKS");
 	}
 	
 
