@@ -4,7 +4,8 @@
 
 #define FOREVER 1E+31
 
-
+typedef uint64_t TimePoint;
+typedef uint64_t TimeDuration;
 
 #define PTRS(TypeName)\
 using TypeName##Ptr = nn::nn<TypeName*>;\
