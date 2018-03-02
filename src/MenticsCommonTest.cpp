@@ -22,12 +22,12 @@ namespace MenticsGame {
 		Logger::WriteMessage(msg.formatted.c_str());
 	}
 
-	void test_sink::log(char* msg)
+	void test_sink::log(const char* msg)
 	{
 		Logger::WriteMessage(msg);
 	}
 
-	void test_sink::flush()
+	void test_sink::flush() 
 	{
 		// to impl
 	}
