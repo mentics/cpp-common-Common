@@ -2,6 +2,7 @@
 #include "nn.hpp"
 
 
+
 #define FOREVER 1E+31
 
 typedef uint64_t TimePoint;
@@ -27,6 +28,7 @@ typedef uint8_t byte;
 
 namespace nn = dropbox::oxygen;
 
+std::shared_ptr<spdlog::logger> log;
 
 //template <typename T, typename... Args>
 //std::unique_ptr<T> uniquePtr(Args &&... args) {

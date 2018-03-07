@@ -19,20 +19,11 @@
 #include <gsl/gsl>
 
 
-
-/*
-#include <boost/log/sources/severity_logger.hpp>
-#include <boost/log/trivial.hpp>
-#include <boost/lockfree/queue.hpp>
-*/
-
 #include <vector>
 #include <queue>
 
 #include <mutex>
 #include <condition_variable>
-
-#include "CppUnitTest.h"
 
 #include "../../math/include/nlopt/nlopt.hpp"
 
@@ -44,5 +35,7 @@
 #include "spdlog/fmt/bundled/ostream.h"
 
 #include <iostream>
+
+
 
 
