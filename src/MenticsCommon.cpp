@@ -6,7 +6,7 @@
 namespace MenticsGame {
 
 
-std::shared_ptr<spdlog::logger> mlog = spdlog::get("logger");
+std::shared_ptr<spdlog::logger> mlog = spdlog::stdout_color_mt("logger");
 
 
 namespace chrono = std::chrono;
