@@ -144,6 +144,7 @@
     <ClInclude Include="include\PriorityQueue.h" />
     <ClInclude Include="include\stdafx.h" />
     <ClInclude Include="include\targetver.h" />
+    <ClInclude Include="MenticsCommonTest.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\MenticsCommon.cpp" />
