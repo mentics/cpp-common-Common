@@ -5,6 +5,10 @@
 
 namespace MenticsGame {
 
+
+std::shared_ptr<spdlog::logger> mlog = spdlog::get("logger");
+
+
 namespace chrono = std::chrono;
 
 const chrono::high_resolution_clock::time_point BASE_TIME = chrono::high_resolution_clock::now();

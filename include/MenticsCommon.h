@@ -1,6 +1,6 @@
 #pragma once
 #include "nn.hpp"
-
+#include "spdlog\spdlog.h"
 
 
 #define FOREVER 1E+31
@@ -28,7 +28,8 @@ typedef uint8_t byte;
 
 namespace nn = dropbox::oxygen;
 
-std::shared_ptr<spdlog::logger> log;
+
+
 
 //template <typename T, typename... Args>
 //std::unique_ptr<T> uniquePtr(Args &&... args) {
@@ -37,6 +38,7 @@ std::shared_ptr<spdlog::logger> log;
 
 namespace MenticsGame {
 
+	extern std::shared_ptr<spdlog::logger> mlog;
 	const std::string EMPTY_STRING;
 	uint64_t currentTimeMillis();
 	uint64_t currentTimeNanos();

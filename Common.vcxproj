@@ -140,7 +140,6 @@
   <ItemGroup>
     <ClInclude Include="include\concurrentqueue.h" />
     <ClInclude Include="include\MenticsCommon.h" />
-    <ClInclude Include="include\MenticsCommonTest.h" />
     <ClInclude Include="include\nn.hpp" />
     <ClInclude Include="include\PriorityQueue.h" />
     <ClInclude Include="include\stdafx.h" />
@@ -148,7 +147,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\MenticsCommon.cpp" />
-    <ClCompile Include="src\MenticsCommonTest.cpp" />
     <ClCompile Include="src\stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)$(SolutionName).pch</PrecompiledHeaderOutputFile>
