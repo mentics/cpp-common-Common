@@ -3,6 +3,9 @@
 #include "spdlog\spdlog.h"
 
 
+#define PREVENT_COPY(class_name) class_name(const class_name&) = delete;\
+                                 class_name& operator=(const class_name&) = delete
+
 #define FOREVER 1E+31
 
 typedef uint64_t TimePoint;
@@ -27,14 +30,6 @@ using TypeName##UniquePtr = nn::nn<std::unique_ptr<TypeName<TemplateName1, Templ
 typedef uint8_t byte;
 
 namespace nn = dropbox::oxygen;
-
-
-
-
-//template <typename T, typename... Args>
-//std::unique_ptr<T> uniquePtr(Args &&... args) {
-//	return std::make_unique<T>(std::forward<Args>(args)...);
-//}
 
 namespace MenticsGame {
 	inline void setupLog() {}
