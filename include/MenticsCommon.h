@@ -3,8 +3,12 @@
 #include "spdlog\spdlog.h"
 
 
-#define PREVENT_COPY(class_name) class_name(const class_name&) = delete;\
-                                 class_name& operator=(const class_name&) = delete
+#define ONLY_MOVE(class_name) \
+public:\
+	class_name(class_name&&) = default;\
+private:\
+	class_name(const class_name&) = delete;\
+	class_name& operator=(const class_name&) = delete
 
 #define FOREVER 1E+31
 
