@@ -10,7 +10,7 @@ private:\
 	class_name(const class_name&) = delete;\
 	class_name& operator=(const class_name&) = delete
 
-#define FOREVER 1E+31
+#define FOREVER 1E16
 
 typedef uint64_t TimePoint;
 typedef uint64_t TimeDuration;
