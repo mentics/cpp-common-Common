@@ -36,7 +36,6 @@ typedef uint8_t byte;
 namespace nn = dropbox::oxygen;
 
 namespace MenticsGame {
-	inline void setupLog() {}
 	extern std::shared_ptr<spdlog::logger> mlog;
 	const std::string EMPTY_STRING;
 	uint64_t currentTimeMillis();
