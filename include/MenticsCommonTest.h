@@ -1,15 +1,9 @@
 #pragma once
-
-
-
 #include "stdafx.h"
 #include "CppUnitTest.h"
 #include "MenticsCommon.h"
 
-
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
-
-
 
 namespace MenticsGame {
 

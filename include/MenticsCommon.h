@@ -20,6 +20,8 @@ using TypeName##UniquePtr = nn::nn<std::unique_ptr<TypeName> >;
 
 #define PTRS1(TypeName, TemplateName)\
 template <typename TemplateName>\
+class TypeName;\
+template <typename TemplateName>\
 using TypeName##Ptr = nn::nn<TypeName<TemplateName>*>;\
 template <typename TemplateName>\
 using TypeName##UniquePtr = nn::nn<std::unique_ptr<TypeName<TemplateName>>>;
@@ -29,6 +31,8 @@ using TypeName##UniquePtr = nn::nn<std::unique_ptr<TypeName<TemplateName>>>;
 //using TypeName##UniquePtrT = nn::nn<std::unique_ptr<TypeName<TT>>>;
 
 #define PTRS2(TypeName, TemplateName1, TemplateName2)\
+template <typename TemplateName1, typename TemplateName2>\
+class TypeName;\
 template <typename TemplateName1, typename TemplateName2>\
 using TypeName##Ptr = nn::nn<TypeName<TemplateName1, TemplateName2>*>;\
 template <typename TemplateName1, typename TemplateName2>\
@@ -44,6 +48,16 @@ extern std::shared_ptr<spdlog::logger> mlog;
 const std::string EMPTY_STRING;
 uint64_t currentTimeMillis();
 uint64_t currentTimeNanos();
+
+template<typename T>
+nn::nn<T*> notNull(T* obj) {
+	return NN_CHECK_ASSERT(obj);
+}
+
+template<typename T>
+nn::nn<T*> toPtr(nn::nn_unique_ptr<T> const& obj) {
+	return nn::nn_addr(*obj);
+}
 
 template <typename T, typename... Args>
 nn::nn_unique_ptr<T> uniquePtr(Args &&... args) {
