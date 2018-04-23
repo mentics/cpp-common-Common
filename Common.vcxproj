@@ -83,7 +83,6 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>Create</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -96,9 +95,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PrecompiledHeader>Create</PrecompiledHeader>
       <EnablePREfast>false</EnablePREfast>
     </ClCompile>
     <Link>
@@ -108,7 +105,6 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>Use</PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -124,7 +120,6 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>Create</PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -142,13 +137,13 @@
     <ClInclude Include="include\MenticsCommon.h" />
     <ClInclude Include="include\nn.hpp" />
     <ClInclude Include="include\PriorityQueue.h" />
-    <ClInclude Include="include\stdafx.h" />
+    <ClInclude Include="include\stdafx-common.h" />
     <ClInclude Include="include\targetver.h" />
     <ClInclude Include="include\MenticsCommonTest.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\MenticsCommon.cpp" />
-    <ClCompile Include="src\stdafx.cpp">
+    <ClCompile Include="src\stdafx-common.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)$(SolutionName).pch</PrecompiledHeaderOutputFile>
       <SDLCheck Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</SDLCheck>
